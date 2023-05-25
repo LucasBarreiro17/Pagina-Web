@@ -17,9 +17,9 @@ contenedorLigth.addEventListener('click',(e)=>{
     imagenLigth.classList.toggle("clickeable")
    } else if (e.target === imagenLigth){
     if(imagenLigth.src.includes('STAAR')){
-    window.location.href = "https://staar.com.uy";}
+    abrirNuevoTab("https://staar.com.uy");}
     else if (imagenLigth.src.includes('high'))
-    window.location.href = "https://drive.google.com/file/d/1i-1njU2_YU-1KvHLyxlEdUKsi8hPV2e3/view?usp=share_link";
+    abrirNuevoTab("https://drive.google.com/file/d/1i-1njU2_YU-1KvHLyxlEdUKsi8hPV2e3/view?usp=share_link");
    }
 })
 
@@ -32,3 +32,9 @@ const aparecerImagen = (imagen)=>{
     imagenLigth.classList.toggle("clickeable")
     
 }
+function abrirNuevoTab(url) {
+    // Abrir nuevo tab
+    var win = window.open(url, '_blank');
+    // Cambiar el foco al nuevo tab (punto opcional)
+    win.focus();
+  }
